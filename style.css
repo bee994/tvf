@@ -256,7 +256,7 @@ thead th.active span.icon-arrow{
     color: #fff;
 }
 
-thead th.asc span.icon-arrow{
+thead th.desc span.icon-arrow{
     transform: rotate(180deg);
 }
 
