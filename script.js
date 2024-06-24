@@ -23,7 +23,7 @@ function searchTable() {
 const sortOrder = {};
 
 table_headings.forEach((head, i) => {
-    sortOrder[i] = true; // Initialize each column to sort in ascending order
+    sortOrder[i] = false; // Initialize each column to sort in descending order
 
     head.onclick = () => {
         table_headings.forEach(head => head.classList.remove('active'));
