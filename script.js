@@ -1,8 +1,3 @@
-/**
-Code written by:
-👨🏻‍⚕️ @Coding Design (Jeet Saru)
-*/
-
 const search = document.querySelector('.input-group input'),
     table_rows = document.querySelectorAll('tbody tr'),
     table_headings = document.querySelectorAll('thead th');
