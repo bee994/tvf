@@ -25,26 +25,25 @@ function searchTable() {
 }
 
 // 2. Sorting | Ordering data of HTML table
-table_headings.forEach((head, i) => {
-    let sort_asc = true;
-    head.onclick = () => {
-        table_headings.forEach(head => {
-            head.classList.remove('active');
-            head.querySelector('.icon-arrow').classList.remove('rotate');
-        });
+const sortOrder = {};
 
+table_headings.forEach((head, i) => {
+    sortOrder[i] = true; // Initialize each column to sort in ascending order
+
+    head.onclick = () => {
+        table_headings.forEach(head => head.classList.remove('active'));
         head.classList.add('active');
-        head.querySelector('.icon-arrow').classList.toggle('rotate', !sort_asc);
 
         document.querySelectorAll('td').forEach(td => td.classList.remove('active'));
         table_rows.forEach(row => {
             row.querySelectorAll('td')[i].classList.add('active');
         });
 
-        head.classList.toggle('asc', sort_asc);
-        sort_asc = head.classList.contains('asc') ? false : true;
+        // Toggle the sort order for the clicked column
+        sortOrder[i] = !sortOrder[i];
+        head.classList.toggle('asc', sortOrder[i]);
 
-        sortTable(i, sort_asc);
+        sortTable(i, sortOrder[i]);
     };
 });
 
