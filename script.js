@@ -12,7 +12,7 @@ function searchTable() {
 
         row.classList.toggle('hide', table_data.indexOf(search_data) < 0);
         row.style.setProperty('--delay', i / 25 + 's');
-    })
+    });
 
     document.querySelectorAll('tbody tr:not(.hide)').forEach((visible_row, i) => {
         visible_row.style.backgroundColor = (i % 2 == 0) ? 'transparent' : '#0000000b';
@@ -21,7 +21,7 @@ function searchTable() {
 
 // 2. Sorting | Ordering data of HTML table
 table_headings.forEach((head, i) => {
-    let sort_asc = true;
+    let sort_asc = true;  // Set default sorting order to ascending
     head.onclick = () => {
         table_headings.forEach(head => head.classList.remove('active'));
         head.classList.add('active');
@@ -29,16 +29,16 @@ table_headings.forEach((head, i) => {
         document.querySelectorAll('td').forEach(td => td.classList.remove('active'));
         table_rows.forEach(row => {
             row.querySelectorAll('td')[i].classList.add('active');
-        })
+        });
 
-        head.classList.toggle('desc', sort_desc);
-        sort_desc = head.classList.contains('desc') ? false : true;
+        head.classList.toggle('asc', sort_asc);
+        sort_asc = head.classList.contains('asc') ? false : true;
 
-        sortTable(i, sort_desc);
+        sortTable(i, sort_asc);
     }
 });
 
-function sortTable(column, sort_desc) {
+function sortTable(column, sort_asc) {
     const tbody = document.querySelector('tbody');
     const rowsArray = Array.from(table_rows);
 
@@ -60,8 +60,8 @@ function sortTable(column, sort_desc) {
             second_row = dateB;
         }
 
-        if (first_row < second_row) return sort_desc ? -1 : 1;
-        if (first_row > second_row) return sort_desc ? 1 : -1;
+        if (first_row < second_row) return sort_asc ? -1 : 1;
+        if (first_row > second_row) return sort_asc ? 1 : -1;
         return 0;
     });
 
