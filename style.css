@@ -257,7 +257,7 @@ thead th.active span.icon-arrow{
 }
 
 thead th.asc span.icon-arrow{
-    transform: rotate(180deg);
+    /*transform: rotate(180deg);*/
 }
 
 thead th.active,tbody td.active {
