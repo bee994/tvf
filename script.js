@@ -25,7 +25,6 @@ function searchTable() {
 }
 
 // 2. Sorting | Ordering data of HTML table
-
 table_headings.forEach((head, i) => {
     let sort_asc = true;
     head.onclick = () => {
@@ -42,15 +41,34 @@ table_headings.forEach((head, i) => {
 
         sortTable(i, sort_asc);
     }
-})
-
+});
 
 function sortTable(column, sort_asc) {
-    [...table_rows].sort((a, b) => {
-        let first_row = a.querySelectorAll('td')[column].textContent.toLowerCase(),
-            second_row = b.querySelectorAll('td')[column].textContent.toLowerCase();
+    const tbody = document.querySelector('tbody');
+    const rowsArray = Array.from(table_rows);
 
-        return sort_asc ? (first_row < second_row ? 1 : -1) : (first_row < second_row ? -1 : 1);
-    })
-        .map(sorted_row => document.querySelector('tbody').appendChild(sorted_row));
+    rowsArray.sort((a, b) => {
+        let first_row = a.querySelectorAll('td')[column].textContent.trim().toLowerCase(),
+            second_row = b.querySelectorAll('td')[column].textContent.trim().toLowerCase();
+
+        // Handle numeric values
+        if (!isNaN(first_row) && !isNaN(second_row)) {
+            first_row = parseFloat(first_row);
+            second_row = parseFloat(second_row);
+        }
+
+        // Handle date values
+        const dateA = Date.parse(first_row);
+        const dateB = Date.parse(second_row);
+        if (!isNaN(dateA) && !isNaN(dateB)) {
+            first_row = dateA;
+            second_row = dateB;
+        }
+
+        if (first_row < second_row) return sort_asc ? -1 : 1;
+        if (first_row > second_row) return sort_asc ? 1 : -1;
+        return 0;
+    });
+
+    rowsArray.forEach(row => tbody.appendChild(row));
 }
