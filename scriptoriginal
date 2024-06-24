@@ -1,4 +1,4 @@
-const search = document.querySelector('.input-group input'),
+/*const search = document.querySelector('.input-group input'),
     table_rows = document.querySelectorAll('tbody tr'),
     table_headings = document.querySelectorAll('thead th');
 
@@ -67,3 +67,4 @@ function sortTable(column, sort_asc) {
 
     rowsArray.forEach(row => tbody.appendChild(row));
 }
+*/
