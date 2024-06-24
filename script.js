@@ -12,7 +12,7 @@ function searchTable() {
 
         row.classList.toggle('hide', table_data.indexOf(search_data) < 0);
         row.style.setProperty('--delay', i / 25 + 's');
-    });
+    })
 
     document.querySelectorAll('tbody tr:not(.hide)').forEach((visible_row, i) => {
         visible_row.style.backgroundColor = (i % 2 == 0) ? 'transparent' : '#0000000b';
@@ -20,11 +20,8 @@ function searchTable() {
 }
 
 // 2. Sorting | Ordering data of HTML table
-const sortOrder = {};
-
 table_headings.forEach((head, i) => {
-    sortOrder[i] = false; // Initialize each column to sort in descending order
-
+    let sort_asc = true;
     head.onclick = () => {
         table_headings.forEach(head => head.classList.remove('active'));
         head.classList.add('active');
@@ -32,14 +29,13 @@ table_headings.forEach((head, i) => {
         document.querySelectorAll('td').forEach(td => td.classList.remove('active'));
         table_rows.forEach(row => {
             row.querySelectorAll('td')[i].classList.add('active');
-        });
+        })
 
-        // Toggle the sort order for the clicked column
-        sortOrder[i] = !sortOrder[i];
-        head.classList.toggle('asc', sortOrder[i]);
+        head.classList.toggle('asc', sort_asc);
+        sort_asc = head.classList.contains('asc') ? false : true;
 
-        sortTable(i, sortOrder[i]);
-    };
+        sortTable(i, sort_asc);
+    }
 });
 
 function sortTable(column, sort_asc) {
@@ -54,15 +50,14 @@ function sortTable(column, sort_asc) {
         if (!isNaN(first_row) && !isNaN(second_row)) {
             first_row = parseFloat(first_row);
             second_row = parseFloat(second_row);
-        } else {
-            // Handle date values
-            const dateA = parseDate(first_row);
-            const dateB = parseDate(second_row);
+        }
 
-            if (dateA && dateB) {
-                first_row = dateA.getTime();
-                second_row = dateB.getTime();
-            }
+        // Handle date values
+        const dateA = Date.parse(first_row);
+        const dateB = Date.parse(second_row);
+        if (!isNaN(dateA) && !isNaN(dateB)) {
+            first_row = dateA;
+            second_row = dateB;
         }
 
         if (first_row < second_row) return sort_asc ? -1 : 1;
@@ -72,27 +67,3 @@ function sortTable(column, sort_asc) {
 
     rowsArray.forEach(row => tbody.appendChild(row));
 }
-
-function parseDate(dateStr) {
-    const parts = dateStr.split(' ');
-    if (parts.length === 3) {
-        const [month, day, year] = parts;
-        return new Date(`${year}-${monthConversion[month]}-${day.replace(',', '')}`);
-    }
-    return null;
-}
-
-const monthConversion = {
-    "january": "01",
-    "february": "02",
-    "march": "03",
-    "april": "04",
-    "may": "05",
-    "june": "06",
-    "july": "07",
-    "august": "08",
-    "september": "09",
-    "october": "10",
-    "november": "11",
-    "december": "12"
-};
