@@ -55,14 +55,15 @@ function sortTable(column, sort_asc) {
         if (!isNaN(first_row) && !isNaN(second_row)) {
             first_row = parseFloat(first_row);
             second_row = parseFloat(second_row);
-        }
+        } else {
+            // Handle date values
+            const dateA = parseDate(first_row);
+            const dateB = parseDate(second_row);
 
-        // Handle date values
-        const dateA = Date.parse(first_row);
-        const dateB = Date.parse(second_row);
-        if (!isNaN(dateA) && !isNaN(dateB)) {
-            first_row = dateA;
-            second_row = dateB;
+            if (dateA && dateB) {
+                first_row = dateA.getTime();
+                second_row = dateB.getTime();
+            }
         }
 
         if (first_row < second_row) return sort_asc ? -1 : 1;
@@ -72,3 +73,27 @@ function sortTable(column, sort_asc) {
 
     rowsArray.forEach(row => tbody.appendChild(row));
 }
+
+function parseDate(dateStr) {
+    const parts = dateStr.split(' ');
+    if (parts.length === 3) {
+        const [month, day, year] = parts;
+        return new Date(`${year}-${monthConversion[month]}-${day.replace(',', '')}`);
+    }
+    return null;
+}
+
+const monthConversion = {
+    "january": "01",
+    "february": "02",
+    "march": "03",
+    "april": "04",
+    "may": "05",
+    "june": "06",
+    "july": "07",
+    "august": "08",
+    "september": "09",
+    "october": "10",
+    "november": "11",
+    "december": "12"
+};
