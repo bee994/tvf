@@ -1,0 +1,204 @@
+<!-- 
+
+Code written by:
+👨🏻‍⚕️ Coding Design (Jeet Saru)
+
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Shows & Videos</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <main class="table" id="customers_table">
+        <section class="table__header">
+            <h1>Shows & Videos List</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="images/search.png" alt="">
+            </div>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Title <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Category <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Date <span class="icon-arrow">&UpArrow;</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                  <td data-cell= "id"> 01</td>
+                  <td data-cell= "title"> 90 Day Fiance</td>
+                  <td data-cell = "category"> <p class="status orange"> Reality </p> </td>
+                        <td> September 7, 2022 </td>
+                    </tr>
+                <tr>
+                  <td data-cell= "id"> 02</td>
+                  <td data-cell = "title">9-1-1</td>
+                  <td data-cell = "category"> <p class="status blue"> Action </p> <p class="status red"> Drama </p> <p class="status purple"> Procedural Drama </p> </td>
+                  <td data-cell = "date">September 7, 2022</td>
+                </tr>
+                <tr>
+                  <td data-cell= "id">03</td>
+                  <td data-cell = "title">9-1-1 Lone Star</td>
+                  <td data-cell = "category"> <p class="status blue"> Action </p> <p class="status red"> Drama </p> <p class="status purple"> Procedural Drama </p> </td>
+                  <td data-cell = "date">September 7, 2022</td>
+                </tr>
+                <tr>
+                  <td data-cell= "id">04</td>
+                  <td data-cell = "title">SWAT</td>
+                  <td data-cell = "category"> <p class="status blue"> Action </p> <p class="status red"> Drama </p> <p class="status purple"> Procedural Drama </p> </td>
+                  <td data-cell = "date">September 7, 2022</td>
+                </tr>
+            <tr>
+                  <td data-cell= "id">05</td>
+                  <td data-cell = "title">FBI</td>
+                  <td data-cell = "category"> <p class="status blue"> Action </p> <p class="status red"> Drama </p> <p class="status purple"> Procedural Drama </p> </td>
+                  <td data-cell = "date">September 7, 2022</td>
+                </tr>
+              
+                 <tr>
+                  <td data-cell= "id">06</td>
+                  <td data-cell = "title">FBI: Most Wanted</td>
+                  <td data-cell = "category"> <p class="status blue"> Action </p> <p class="status green"> Crime </p> <p class="status red"> Drama </p> </td>
+                  <td data-cell = "date">September 7, 2022</td>
+                </tr>
+                <tr>
+                  <td data-cell= "id">07</td>
+                  <td data-cell = "title">FBI: International</td>
+                  <td data-cell = "category"> <p class="status blue"> Action </p> <p class="status green"> Crime </p> <p class="status red"> Drama </p> </td>
+                  <td data-cell = "date">September 7, 2022</td>
+                </tr>
+                <tr>
+                  <td data-cell= "id">08</td>
+                  <td data-cell = "title">Love Island UK</td>
+                  <td data-cell = "category"> <p class="status orange"> Reality </p> <p class="status red"> Romance </p> </td>
+                  <td data-cell = "date">September 7, 2022</td>
+                </tr>
+              
+                <tr>
+                  <td data-cell= "id">09</td>
+                  <td data-cell = "title">Love Island US</td>
+                  <td data-cell = "category"> <p class="status orange"> Reality </p> <p class="status red"> Romance </p> </td>
+                  <td data-cell = "date">September 7, 2022</td>
+                </tr>
+              
+                <tr>
+                  <td data-cell= "id">10</td>
+                  <td data-cell = "title">The Now</td>
+                  <td data-cell = "category"> <p class="status yellow"> Comedy </p> </td>
+                  <td data-cell = "date">September 7, 2022</td>
+                </tr>
+              
+                <tr>
+                  <td data-cell= "id">11</td>
+                  <td data-cell = "title">Money Heist</td>
+                  <td data-cell = "category"> <p class="status green"> Crime </p> <p class="status red"> Drama </p> <p class="status red"> Thriller </p> </td>
+                  <td data-cell = "date">September 7, 2022</td>
+                </tr>
+              
+                <tr>
+                  <td data-cell= "id">12</td>
+                  <td data-cell = "title">Atlanta</td>
+                  <td data-cell = "category"> <p class="status yellow"> Comedy </p> <p class="status red"> Drama </p> </td>
+                  <td data-cell = "date">October 15, 2022</td>
+                </tr>
+              
+                <tr>
+                  <td data-cell= "id">13</td>
+                  <td data-cell = "title">Vampire Academy</td>
+                  <td data-cell = "category"> <p class="status blue"> Fantasy </p> <p class="status pink"> Horror </p> <p class="status purple"> Supernatural </p> </td>
+                  <td data-cell = "date">October 15, 2022</td>
+                </tr>
+              
+                <tr>
+                  <td data-cell= "id">14</td>
+                  <td data-cell = "title">Killing It!</td>
+                  <td data-cell = "category"> <p class="status yellow"> Comedy </p> </td>
+                  <td data-cell = "date">October 22, 2022</td>
+                </tr>
+                  
+                <tr>
+                  <td data cell = "id">15</td>
+                  <td data cell = "title"> Bel-Air </td>
+                  <td data cell = "category"> <p class="status red"> Drama </p> </td>
+                  <td data cell = "date"> October 24, 2022 </td>
+                </tr>
+                <tr>
+                  <td data cell = "id">16</td>
+                  <td data cell = "title"> La Brea </td>
+                  <td data cell = "category"> <p class="status red"> Drama </p> <p class="status blue"> Mystery </p> <p class="status yellow"> Science Fiction </p> </td>
+                  <td data cell = "date"> November 22, 2022 </td>
+                </tr>
+                <tr>
+                  <td data cell = "id">17</td>
+                  <td data cell = "title"> Resident Alien </td>
+                  <td data cell = "category"> <p class="status yellow"> Comedy </p> <p class="status yellow"> Science Fiction </p> </td>
+                  <td data cell = "date"> November 29, 2022 </td>
+                </tr>
+                <tr>
+                  <td data cell = "id">18</td>
+                  <td data cell = "title"> God’s Favorite Idiot </td>
+                  <td data cell = "category"> <p class="status yellow"> Comedy </p> <p class="status purple"> Supernatural </p> </td>
+                  <td data cell = "date"> November 29, 2022 </td>
+                </tr>
+                <tr>
+                  <td data cell = "id">19</td>
+                  <td data cell = "title"> Don’t Look Deeper </td>
+                  <td data cell = "category"> <p class="status red"> Drama </p> <p class="status yellow"> Science Fiction </p> </td>
+                  <td data cell = "date"> December 9, 2022 </td>
+                </tr>
+                <tr>
+                  <td data cell = "id">20</td>
+                  <td data cell = "title"> Scandal </td>
+                  <td data cell = "category"> <p class="status red"> Drama </p> <p class="status red"> Thriller </p> </td>
+                  <td data cell = "date"> December 31, 2022 </td>
+                </tr>
+                <tr>
+                  <td data cell = "id">21</td>
+                  <td data cell = "title"> Empire </td>
+                  <td data cell = "category"> <p class="status red"> Drama </p> <p class="status yellow"> Musical </p> </td>
+                  <td data cell = "date"> December 31, 2022 </td>
+                </tr>
+                <tr>
+                  <td data cell = "id">22</td>
+                  <td data cell = "title"> Nine Perfect Strangers </td>
+                  <td data cell = "category"> <p class="status red"> Drama </p> <p class="status red"> Thriller </p> </td>
+                  <td data cell = "date"> January 2, 2023 </td>
+                </tr>
+                <tr>
+                  <td data cell = "id">23</td>
+                  <td data cell = "title"> Abbott Elementary </td>
+                  <td data cell = "category"> <p class="status yellow"> Comedy </p> <p class="status orange"> Mockumentary </p> </td>
+                  <td data cell = "date"> January 2, 2023 </td>
+                </tr>
+                <tr>
+                  <td data cell = "id">24</td>
+                  <td data cell = "title"> Claws </td>
+                  <td data cell = "category"> <p class="status yellow"> Comedy </p> <p class="status green"> Crime </p> <p class="status red"> Drama </p> </td>
+                  <td data cell = "date"> January 2, 2023 </td>
+                </tr>
+                <tr>
+                  <td data cell = "id">25</td>
+                  <td data cell = "title"> Big Sky </td>
+                  <td data cell = "category"> <p class="status green"> Crime </p> <p class="status red"> Drama </p> <p class="status red"> Thriller </p> </td>
+                  <td data cell = "date"> January 17, 2023 </td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
