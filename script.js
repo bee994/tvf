@@ -20,7 +20,11 @@ function searchTable() {
 }
 
 // 2. Sorting | Ordering data of HTML table
+const sortOrder = {};
+
 table_headings.forEach((head, i) => {
+    sortOrder[i] = true; // Initialize each column to sort in ascending order
+
     head.onclick = () => {
         table_headings.forEach(head => head.classList.remove('active'));
         head.classList.add('active');
@@ -30,10 +34,11 @@ table_headings.forEach((head, i) => {
             row.querySelectorAll('td')[i].classList.add('active');
         });
 
-        let sort_asc = !head.classList.contains('asc');
-        head.classList.toggle('asc', sort_asc);
+        // Toggle the sort order for the clicked column
+        sortOrder[i] = !sortOrder[i];
+        head.classList.toggle('asc', sortOrder[i]);
 
-        sortTable(i, sort_asc);
+        sortTable(i, sortOrder[i]);
     };
 });
 
