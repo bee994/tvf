@@ -1,4 +1,4 @@
-/*
+/* /*
 Responsive HTML Table With Pure CSS - Web Design/UI Design
 */
 
@@ -263,3 +263,4 @@ thead th.asc span.icon-arrow{
 thead th.active,tbody td.active {
     color: #6c00bd;
 }
+*/
