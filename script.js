@@ -31,14 +31,14 @@ table_headings.forEach((head, i) => {
             row.querySelectorAll('td')[i].classList.add('active');
         })
 
-        head.classList.toggle('asc', sort_asc);
-        sort_asc = head.classList.contains('asc') ? false : true;
+        head.classList.toggle('desc', sort_desc);
+        sort_desc = head.classList.contains('desc') ? false : true;
 
-        sortTable(i, sort_asc);
+        sortTable(i, sort_desc);
     }
 });
 
-function sortTable(column, sort_asc) {
+function sortTable(column, sort_desc) {
     const tbody = document.querySelector('tbody');
     const rowsArray = Array.from(table_rows);
 
@@ -61,7 +61,7 @@ function sortTable(column, sort_asc) {
         }
 
         if (first_row < second_row) return sort_desc ? -1 : 1;
-        if (first_row > second_row) return sort_asc ? 1 : -1;
+        if (first_row > second_row) return sort_desc ? 1 : -1;
         return 0;
     });
 
