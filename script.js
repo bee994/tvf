@@ -61,7 +61,7 @@ function sortTable(column, sort_asc) {
         }
 
         if (first_row < second_row) return sort_asc ? -1 : 1;
-        if (first_row > second_row) return sort_asc ? 1 : -1;
+        if (first_row > second_row) return sort_desc ? 1 : -1;
         return 0;
     });
 
