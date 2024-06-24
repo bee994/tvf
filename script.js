@@ -26,17 +26,23 @@ function searchTable() {
 
 // 2. Sorting | Ordering data of HTML table
 table_headings.forEach((head, i) => {
+    let sort_asc = true;
     head.onclick = () => {
-        table_headings.forEach(head => head.classList.remove('active'));
+        table_headings.forEach(head => {
+            head.classList.remove('active');
+            head.querySelector('.icon-arrow').classList.remove('rotate');
+        });
+
         head.classList.add('active');
+        head.querySelector('.icon-arrow').classList.toggle('rotate', !sort_asc);
 
         document.querySelectorAll('td').forEach(td => td.classList.remove('active'));
         table_rows.forEach(row => {
             row.querySelectorAll('td')[i].classList.add('active');
         });
 
-        let sort_asc = !head.classList.contains('asc');
         head.classList.toggle('asc', sort_asc);
+        sort_asc = head.classList.contains('asc') ? false : true;
 
         sortTable(i, sort_asc);
     };
