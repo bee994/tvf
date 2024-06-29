@@ -1,14 +1,3 @@
-/**
-Responsive HTML Table With Pure CSS - Web Design/UI Design
-
-Code written by:
-👨🏻‍⚕️ @Coding Design (Jeet Saru)
-
-> You can do whatever you want with the code. However if you love my content, you can **SUBSCRIBED** my YouTube Channel.
-
-🌎link: www.youtube.com/codingdesign 
-*/
-
 const search = document.querySelector('.input-group input'),
     table_rows = document.querySelectorAll('tbody tr'),
     table_headings = document.querySelectorAll('thead th');
@@ -32,7 +21,6 @@ function searchTable() {
 
 // 2. Sorting | Ordering data of HTML table
 
-/*redone*/
 table_headings.forEach((head, i) => {
     let sort_desc = true;
     head.onclick = () => {
@@ -56,7 +44,6 @@ table_headings.forEach((head, i) => {
     }
 })
 
-/*redone*/
 function sortTable(column, sort_desc) {
     [...table_rows].sort((a, b) => {
         let first_row = a.querySelectorAll('td')[column].textContent.toLowerCase(),
@@ -68,7 +55,6 @@ function sortTable(column, sort_desc) {
 }
 
 // The rest of your code remains the same.
-/*date new*/
 function sortTable(column, sort_asc) {
     const tbody = document.querySelector('tbody');
     const rowsArray = Array.from(table_rows);
