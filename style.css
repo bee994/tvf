@@ -1,3 +1,4 @@
+/*new formula*/
 * {
     margin: 0;
     padding: 0;
@@ -234,6 +235,7 @@ tbody tr.hide td img {
     color: #49290e;
 }
 
+
 @media (max-width: 1000px) {
     td:not(:first-of-type) {
         min-width: 12.1rem;
@@ -253,7 +255,6 @@ thead th span.icon-arrow {
     margin-left: .5rem;
     transition: .2s ease-in-out;
   
-  /*added*/
     transform: rotate(0deg); /* Default down arrow */
 
 }
@@ -282,3 +283,4 @@ thead th.desc span.icon-arrow{
 thead th.active,tbody td.active {
     color: #6c00bd;
 }
+/*end of new formula*/
